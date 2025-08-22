@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #e41919;
+    --secondary-color: #ff6b6b;
+    --accent-color: #7c4dff;
+    --background-dark: #9b0808;
+    --card-dark: #1e1e1e;
+    --text-light: #e0e0e0;
+    --text-muted: #aaaaaa;
+    --success-color: #00c853;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(images/blackout.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+
+
+.navbar-brand img {
+    height: 50px;
+    width: 50px;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.6));
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-dark);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+.computer-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #28a745;
+}
+
+.computer-card {
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.computer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.reserve-btn {
+    background-color: #343a40;
+    border-color: #343a40;
+    transition: all 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background-color: #23272b;
+    border-color: #1d2124;
+    transform: scale(1.05);
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.no-computers {
+    padding: 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.no-computers i {
+    font-size: 48px;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+

@@ -1,0 +1,873 @@
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(images/blackout.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.content-wrapper {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.page-title {
+    color: #dc3545;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.table {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 120%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.table thead th {
+    background-color: #1a0000;
+    color: #dc3545;
+    border-bottom: 2px solid #dc3545;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 18px 15px;
+    font-size: 0.9rem;
+    position: relative;
+        
+}
+
+.table thead th:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #dc3545, transparent);
+}
+
+.table tbody tr {
+    background-color: rgba(10, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+    position: relative;
+}
+
+.table tbody tr:hover {
+    background-color: #330000;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+    border-left: 5px solid #dc3545;
+    color: #ffffff;
+}
+
+.table tbody tr:hover td {
+    background-color: #330000;
+    color: white;
+    
+}
+
+.table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    border: none;
+    position: relative;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    color: #dc3545;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.user-email {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.status-pending {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.status-confirmed {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.status-declined {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #dc3545;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.btn {
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+}
+
+.btn-decline {
+    background: linear-gradient(45deg, #dc3545, #cc0000);
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+.new-reservation {
+    background-color: rgba(255, 0, 0, 0.05) !important;
+}
+
+.badge.bg-red {
+    background-color: #dc3545 !important;
+}
+
+.table-responsive {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+ body {
+            background-color: var(--background-dark);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(images/blackout.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content-wrapper {
+            padding: 30px 0;
+            background: #0c0c0c;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-wrapper::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(rgba(220, 53, 69, 0.1), transparent 70%);
+            top: -150px;
+            right: -150px;
+            border-radius: 50%;
+        }
+        
+        .content-wrapper::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(rgba(220, 53, 69, 0.1), transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            border-radius: 50%;
+        }
+        
+        .page-title {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            width: 100px;
+            height: 3px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #000000, #dc3545);
+        }
+        
+        /* New reservation highlight */
+        .new-reservation {
+            background-color: rgba(255, 243, 205, 0.15);
+        }
+        
+        /* Action buttons */
+        .btn-confirm {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-confirm:hover {
+            background-color: #218838;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-decline {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-decline:hover {
+            background-color: #c82333;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Status badges for all statuses */
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .status-pending {
+            background-color: #ffc107;
+            color: #000 !important;
+        }
+        
+        .status-confirmed {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .status-declined {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        .status-completed {
+            background-color: #17a2b8;
+            color: white;
+        }
+        
+        .status-refunded, .status-refund, .status-refund-approved, .status-refund-pending {
+            background-color: #6f42c1;
+            color: white;
+        }
+        
+        /* Email notification badges */
+        .badge {
+            padding: 6px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .badge i {
+            font-size: 12px;
+        }
+        
+        /* Tooltip styles */
+        [data-bs-toggle="tooltip"] {
+            cursor: pointer;
+        }
+        
+        /* Card styling */
+        .card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 2rem;
+            background: #151515;
+            border: 1px solid #2c2c2c;
+            position: relative;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #000000, #dc3545);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: rgba(220, 53, 69, 0.2);
+        }
+        
+        .card-header {
+            padding: 1.2rem 1.5rem;
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+            color: #e0e0e0;
+        }
+        
+        /* Tab styling */
+        .nav-tabs {
+            border-bottom: 2px solid #333;
+            margin-bottom: 25px;
+        }
+        
+        .nav-tabs .nav-link {
+            margin-bottom: -2px;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s;
+            background: rgba(0, 0, 0, 0.2);
+            margin-right: 5px;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: #fff;
+            background-color: #333;
+            border-bottom: 3px solid #555;
+        }
+        
+        .nav-tabs .nav-link:hover:not(.active) {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Pill navigation styling */
+        .nav-pills .nav-link {
+            border-radius: 8px;
+            padding: 0.7rem 1.2rem;
+            transition: all 0.3s;
+            background-color: #212529;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: #333;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-pills .nav-link:hover:not(.active) {
+            background-color: #2a2a2a;
+            transform: translateY(-3px);
+            color: #fff;
+        }
+        
+        /* Table styling */
+        .table {
+            border-collapse: separate;
+            border-spacing: 0;
+            color: #fff !important;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            width: 100%;
+            table-layout: auto;
+        }
+        
+        .table th {
+            background-color: #000000;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 1.2rem 1rem;
+            color: #fff !important;
+            border-bottom: 2px solid #333;
+            white-space: nowrap;
+        }
+        
+        .table td {
+            vertical-align: middle;
+            padding: 1rem 0.85rem;
+            border-bottom: 1px solid #333;
+            color: #fff !important;
+        }
+        
+        /* Column width fixes */
+        .date-column {
+            min-width: 150px;
+            white-space: nowrap;
+        }
+        
+        .receipt-column, .proof-column {
+            min-width: 130px;
+        }
+        
+        .reason-column {
+            min-width: 180px;
+            max-width: 250px;
+        }
+        
+        .request-date-column, .gcash-column {
+            min-width: 140px;
+            white-space: nowrap;
+        }
+        
+        /* Ensure all text is white */
+        body, p, span, div, h1, h2, h3, h4, h5, h6, th, td, button, a, .text-muted, .user-email {
+            color: #fff !important;
+        }
+        
+        .text-muted {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        .user-email {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        select, input, textarea {
+            color: #fff !important;
+        }
+        
+        .table tbody tr:hover {
+            background-color: rgba(220, 53, 69, 0.08);
+        }
+        
+        /* User info styling */
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .user-email {
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+        
+        /* Modal styling */
+        .modal-content {
+            background-color: #1a1a1a;
+            color: #fff;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid #333;
+            padding: 1.2rem 1.5rem;
+        }
+        
+        .modal-footer {
+            border-top: 1px solid #333;
+            padding: 1.2rem 1.5rem;
+        }
+        
+        .form-control, .form-select {
+            background-color: #212529;
+            color: #fff;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            background-color: #2c3034;
+            color: #fff;
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+        }
+        
+        /* Countdown timer styling */
+        .countdown {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 8px 12px;
+            background-color: #212529;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        /* Timer digit badges */
+        .countdown .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 6px;
+            margin: 0 2px;
+            border-radius: 4px;
+        }
+        
+        /* Time separator */
+        .time-separator {
+            font-weight: bold;
+            margin: 0 1px;
+            position: relative;
+            top: -1px;
+        }
+        
+        /* Alert styling */
+        .alert {
+            border-radius: 10px;
+            border: none;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid;
+        }
+        
+        .alert-success {
+            background-color: rgba(40, 167, 69, 0.15);
+            color: #ddffdd;
+            border-left-color: #28a745;
+        }
+        
+        .alert-danger {
+            background-color: rgba(220, 53, 69, 0.15);
+            color: #ffdddd;
+            border-left-color: #dc3545;
+        }
+        
+        .alert-warning {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #ffffdd;
+            border-left-color: #ffc107;
+        }
+        
+        .alert-info {
+            background-color: rgba(23, 162, 184, 0.15);
+            color: #ddffff;
+            border-left-color: #17a2b8;
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 767.98px) {
+            .nav-pills .nav-link {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            .table th, .table td {
+                padding: 0.7rem 0.5rem;
+            }
+            
+            .card-body {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 28px;
+            }
+            
+            .table th {
+                font-size: 0.7rem;
+            }
+        }
+        
+        /* Style the scrollbar for webkit browsers */
+        .table-responsive::-webkit-scrollbar {
+            height: 10px;
+            background-color: #1a1a1a;
+        }
+        
+        .table-responsive::-webkit-scrollbar-thumb {
+            background-color: #dc3545;
+            border-radius: 5px;
+        }
+        
+        .table-responsive::-webkit-scrollbar-track {
+            background-color: #333;
+            border-radius: 5px;
+        }
+        
+        /* Fix modal text colors */
+        .modal-title, .modal-body p, .modal-footer button {
+            color: #fff !important;
+        }
+        
+        /* Fix color overrides */
+        .badge.bg-warning.text-dark {
+            color: #000 !important;
+        }
+        
+        label, small, .form-text {
+            color: #fff !important;
+        }
+        
+        /* Force white text everywhere */
+        *:not(.badge.bg-warning.text-dark):not(.status-pending) {
+            color: #fff;
+        }
+        
+        /* Table responsive styling */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #1a1a1a 30%, rgba(26, 26, 26, 0)),
+                        linear-gradient(to left, #1a1a1a 30%, rgba(26, 26, 26, 0)) 100% 0;
+            background-size: 20px 100%, 20px 100%;
+            background-repeat: no-repeat;
+            background-attachment: local, local;
+        }
+        
+        /* Style the scrollbar for webkit browsers */
+        
+        /* Fix form controls text color */
+        .form-control::placeholder, .form-select::placeholder {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+        
+        .form-text {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        /* Force text color in modals */
+        .modal-content p, .modal-content h5, .modal-content label, .modal-content small, 
+        .modal-content .form-text, .modal-content strong, .modal-content span {
+            color: #fff !important;
+        }
+        
+        /* Fix badges with dark text */
+        .badge.bg-warning, span.badge.bg-warning.text-dark {
+            color: #000 !important;
+        }
+        
+        option {
+            background-color: #212529;
+        }
+        
+        /* Modal styling */
+        .modal-content {
+            background-color: #1a1a1a;
+            color: #fff;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid #333;
+            padding: 1.2rem 1.5rem;
+        }
+        
+        .modal-footer {
+            border-top: 1px solid #333;
+            padding: 1.2rem 1.5rem;
+        }
+        
+        /* Fix payment modal styling */
+        #paymentModal .modal-content * {
+            color: #fff !important;
+        }
+        
+        #paymentModal .payment-details,
+        #paymentModal #payment-container {
+            background-color: #121212 !important;
+            border-color: #444 !important;
+        }
+        
+        #paymentModal strong,
+        #paymentModal p,
+        #paymentModal span:not(.badge),
+        #paymentModal div:not(.spinner-border) {
+            color: #fff !important;
+        }
+        
+        /* Make all modal text white */
+        .modal,
+        .modal-content,
+        .modal-header,
+        .modal-body,
+        .modal-footer,
+        .modal-title,
+        .modal .form-label,
+        .modal p,
+        .modal strong,
+        .modal span,
+        .modal div,
+        .modal small {
+            color: #fff !important;
+        }
+        
+        .modal-content {
+            background-color: #1a1a1a !important;
+        }
+        
+        .modal-body {
+            background-color: #1a1a1a !important;
+        }
+        
+        .modal .alert {
+            color: #fff !important;
+        }
+        
+        .modal .alert-warning {
+            background-color: rgba(255, 193, 7, 0.15) !important;
+        }
+        
+        .modal .alert-danger {
+            background-color: rgba(220, 53, 69, 0.15) !important;
+        }
+        
+        /* Force text color only on specific containers */
+        
+        /* Table column alignment fixes */
+        .date-column {
+            text-align: center;
+            width: 120px;
+            white-space: nowrap;
+        }
+        
+        .time-column {
+            text-align: center;
+            width: 150px;
+            white-space: nowrap;
+        }
+        
+        .time-left-column {
+            text-align: center;
+            width: 200px;
+            white-space: nowrap;
+        }
+        
+        /* Ensure table cells are aligned properly */
+        .table th, .table td {
+            vertical-align: middle;
+            padding: 1rem 0.85rem;
+            border-bottom: 1px solid #333;
+            color: #fff !important;
+            text-align: center;
+        }
+        
+        /* Left-align specific columns */
+        .user-column, .reason-column {
+            text-align: left;
+        }
+        
+        /* Timer digit styling */
+        .time-digit {
+            font-weight: 600;
+            font-size: 16px;
+            font-family: monospace;
+            min-width: 22px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        /* Time separator */
+        .time-separator {
+            font-weight: bold;
+            margin: 0 2px;
+            display: inline-block;
+            font-family: monospace;
+        }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: none;
+    }
+    
+    .btn {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+}

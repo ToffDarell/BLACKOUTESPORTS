@@ -1,0 +1,574 @@
+:root {
+    --primary-color:  #dc3545;
+    --text-light: #ffffff;
+    --background-dark: #000000;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(images/blackout.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Game Cards */
+.game-card {
+    background-color: var(--background-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(220, 53, 69, 0.5);
+    border-color: var(--primary-color);
+}
+
+.game-image {
+    height:220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-bottom: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.game-details {
+    padding: 1.5rem;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.game-title i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.game-description {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.game-stat {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    flex: 1;
+    margin: 0 5px;
+    color: var(--text-light);
+}
+
+.game-stat-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.game-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Tournament Cards */
+.tournament-card {
+    background-color: var(--background-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+}
+
+.tournament-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-bottom: 1px solid rgba(220, 53, 69, 0.2);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.tournament-card:hover .tournament-image {
+    transform: scale(1.05);
+}
+
+.tournament-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.tournament-game-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tournament-details {
+    padding: 1.5rem;
+}
+
+.tournament-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.tournament-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.tournament-info i {
+    width: 20px;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Section Styles */
+.section-title {
+    color: var(--text-light);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Button Styles */
+.btn-view-game {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-view-game:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+}
+
+/* Winner Styles */
+.winner-team {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.winner-team i {
+    margin-right: 5px;
+}
+
+/* Fix navbar logo */
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(220, 53, 69, 0.6));
+}
+h2{
+    margin-top: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.tournament-form {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: white;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.tournament-form .form-label {
+    color: #dc3545;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.tournament-form .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    color: white;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.tournament-form .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #dc3545;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+    color: white;
+}
+
+.tournament-form .btn-primary {
+    background-color: #dc3545;
+    border: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tournament-form .btn-primary:hover {
+    background-color: #bb2d3b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}
+
+.alert {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    border-color: #198754;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: #dc3545;
+}
+
+/* Tournament Card Enhancements */
+.tournament-status-ribbon {
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    background: #dc3545;
+    color: white;
+    padding: 5px 30px;
+    transform: rotate(-45deg);
+    font-weight: 600;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.tournament-progress {
+    margin: 15px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tournament-progress .progress {
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tournament-progress .progress-bar {
+    background-color: #dc3545;
+    transition: width .6s ease;
+}
+
+.tournament-progress-text {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.tournament-progress-text i {
+    color: #dc3545;
+    margin-right: 5px;
+}
+
+.btn-register-now {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-register-now:hover {
+    background-color: #bb2d3b;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}
+
+.btn-registered {
+    background-color: #198754;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    cursor: default;
+}
+
+.btn-registered:hover {
+    background-color: #198754;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(25, 135, 84, 0.4);
+    color: white;
+}
+
+
+/* Animation delays for staggered card appearance */
+.animate__fadeIn:nth-child(1) { animation-delay: 0.1s; }
+.animate__fadeIn:nth-child(2) { animation-delay: 0.2s; }
+.animate__fadeIn:nth-child(3) { animation-delay: 0.3s; }
+.animate__fadeIn:nth-child(4) { animation-delay: 0.4s; }
+.animate__fadeIn:nth-child(5) { animation-delay: 0.5s; }
+.animate__fadeIn:nth-child(6) { animation-delay: 0.6s; }
+
+.registration-header {
+    border-bottom: 2px solid rgba(220, 53, 69, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Pricing-style Card Styling */
+.pricing-section {
+    padding: 60px 0;
+    background: #0c0c0c;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-section::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(rgba(220, 53, 69, 0.1), transparent 70%);
+    top: -150px;
+    right: -150px;
+    border-radius: 50%;
+}
+
+.pricing-section::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(rgba(220, 53, 69, 0.1), transparent 70%);
+    bottom: -150px;
+    left: -150px;
+    border-radius: 50%;
+}
+
+.pricing-card {
+    background: #151515;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
+    border: 1px solid #2c2c2c;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(220, 53, 69, 0.2);
+}
+
+.pricing-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #000000, #dc3545);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.pricing-header h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-header p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.pricing-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.pricing-title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #000000, #dc3545);
+}
+
+.info-badge {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 0 8px 8px 0;
+    color: #ddd;
+}
+
+.info-badge i {
+    color: #dc3545;
+    margin-right: 8px;
+}
+
+.membership-badge {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member {
+    background: #198754;
+    color: white;
+}
+
+.non-member {
+    background: #dc3545;
+    color: white;
+}
+

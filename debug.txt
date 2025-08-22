@@ -1,0 +1,12 @@
+Array
+(
+    [report_type] => reservations
+    [date_range] => today
+    [start_date] => 
+    [end_date] => 
+    [reservation_status] => all
+    [user_status] => all
+    [refund_status] => all
+    [tournament_status] => all
+    [advisory_status] => all
+)
