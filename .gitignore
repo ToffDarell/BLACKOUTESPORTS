@@ -1,0 +1,12 @@
+.env
+
+# Editor settings
+.vscode/
+
+# Runtime logs and local debug output
+debug.txt
+email_logs/
+storage/logs/
+
+# Dependency directories
+vendor/
