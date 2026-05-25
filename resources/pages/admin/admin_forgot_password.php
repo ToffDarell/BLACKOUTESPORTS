@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require APP_ROOT . '/vendor/autoload.php';
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_code'])) {
             $_SESSION['admin_reset_code'] = $reset_code;
             $_SESSION['admin_reset_email'] = $admin_email;
 
-            header('Location: admin_verify_code.php');
+            header('Location: /admin/verify-code');
             exit();
 
         } catch (Exception $e) {
@@ -81,12 +81,12 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Forgot Password - Blackout Esports</title>
-    <link rel="icon" href="images/blackout.jpg" type="image/x-icon">
+    <link rel="icon" href="/images/blackout.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="badges.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/badges.css">
 </head>
 
 <body>
@@ -97,7 +97,7 @@ $conn->close();
         <div class="signup-container">
             <div class="admin-badge">ADMIN AREA</div>
             <div class="logo">
-                <img src="images/blackout.jpg" alt="Blackout Esports Logo"
+                <img src="/images/blackout.jpg" alt="Blackout Esports Logo"
                     onerror="this.src='https://via.placeholder.com/220x80?text=BLACKOUT+ESPORTS'"
                     class="animate__animated animate__fadeIn">
             </div>
@@ -121,12 +121,17 @@ $conn->close();
                 </button>
             </form>
             <div class="text-center mt-3">
-                <p>Remembered your password? <a href="admin_login.php">Login here</a></p>
+                <p>Remembered your password? <a href="/admin/login">Login here</a></p>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="particles.js"></script>
+    <script src="/particles.js"></script>
 </body>
 
 </html>
+
+
+
+
+

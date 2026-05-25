@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Start session
 session_start();
 
@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin_id'])) {
-    header("location:admin_login.php");
+    header("location:/admin/login");
     exit();
 }
 
@@ -187,7 +187,7 @@ $report_title = '';
 $html .= '
 <div class="header">
     <div class="logo-circle">
-        <img src="images/blackout.jpg" alt="Blackout Esports Logo">
+        <img src="/images/blackout.jpg" alt="Blackout Esports Logo">
     </div>
     <h1>BLACKOUT ESPORTS</h1>
 </div>
@@ -403,7 +403,7 @@ function generateTransactionsReport() {
             }
             
             // Format amount with proper currency symbol
-            $amount = isset($row['total_amount']) ? '₱ ' . number_format($row['total_amount'], 2) : 'N/A';
+            $amount = isset($row['total_amount']) ? 'â‚± ' . number_format($row['total_amount'], 2) : 'N/A';
             
             $html .= '
             <tr>
@@ -429,7 +429,7 @@ function generateTransactionsReport() {
             <p>Total Reservations: '.($counter - 1).'</p>
             <p>Paid Reservations: '.$paid_count.'</p>
             <p>Unpaid Reservations: '.$unpaid_count.'</p>
-            <p>Total Revenue: ₱ '.number_format($total_revenue, 2).'</p>
+            <p>Total Revenue: â‚± '.number_format($total_revenue, 2).'</p>
         </div>
         ';
     } else {
@@ -934,3 +934,4 @@ function addReportFooter() {
     $mpdf->Output($report_title.'_'.date('Y-m-d').'.pdf', \Mpdf\Output\Destination::INLINE);
     exit;
 } 
+

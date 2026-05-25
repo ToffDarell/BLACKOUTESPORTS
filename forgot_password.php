@@ -1,7 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
+require APP_ROOT . '/vendor/autoload.php';
 
 session_start();
 
@@ -11,7 +11,7 @@ $username = "root";
 $password = "";
 $dbname = "computer_reservation";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, 3307);
 
 // Check DB connection
 if ($conn->connect_error) {

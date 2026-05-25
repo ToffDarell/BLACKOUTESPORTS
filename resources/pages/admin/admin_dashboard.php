@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 // Start session
 session_start();
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin_id'])) {
-    header("location:admin_login.php");
+    header("location:/admin/login");
     exit();
 }
 
@@ -95,13 +95,13 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Blackout Esports</title>
-    <link rel="icon" href="images/blackout.jpg" type="image/x-icon">
+    <link rel="icon" href="/images/blackout.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="dashcss.css">
-    <link rel="stylesheet" href="admin_nav.css">
-    <link rel="stylesheet" href="pricing.css">
+    <link rel="stylesheet" href="/css/dashcss.css">
+    <link rel="stylesheet" href="/css/admin_nav.css">
+    <link rel="stylesheet" href="/css/pricing.css">
     
 </head>
 
@@ -110,8 +110,8 @@ $conn->close();
     <header class="site-header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="admin_dashboard.php">
-                    <img src="images/blackout.jpg" alt="Blackout Esports" onerror="this.src='https://via.placeholder.com/180x50?text=BLACKOUT+ESPORTS'">
+                <a class="navbar-brand" href="/admin/dashboard">
+                    <img src="/images/blackout.jpg" alt="Blackout Esports" onerror="this.src='https://via.placeholder.com/180x50?text=BLACKOUT+ESPORTS'">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -119,22 +119,22 @@ $conn->close();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="admin_dashboard.php">Home</a>
+                            <a class="nav-link active" href="/admin/dashboard">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="manage_computers.php">Computers</a>
+                            <a class="nav-link" href="/admin/computers">Computers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="manage_reservations.php">Reservations</a>
+                            <a class="nav-link" href="/admin/reservations">Reservations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="add_tournament.php">Tournaments</a>
+                            <a class="nav-link" href="/admin/tournaments/add">Tournaments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="manage_users.php">Users</a>
+                            <a class="nav-link" href="/admin/users">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin_logout.php">Log Out</a>
+                            <a class="nav-link" href="/admin/logout">Log Out</a>
                         </li>
                     </ul>
                 </div>
@@ -168,7 +168,7 @@ $conn->close();
                 <div class="tab-content" id="advisoryTabsContent">
                     <!-- New Advisory Tab -->
                     <div class="tab-pane fade show active" id="newAdvisory" role="tabpanel" aria-labelledby="newAdvisory-tab">
-                        <form id="advisoryForm" method="post" action="post_advisory.php">
+                        <form id="advisoryForm" method="post" action="/admin/advisories/post">
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="advisoryMessage" class="form-label">Advisory Message</label>
@@ -232,7 +232,7 @@ $conn->close();
                     <h5 class="modal-title" id="editAdvisoryModalLabel">Edit Advisory</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="editAdvisoryForm" method="post" action="update_advisory.php">
+                <form id="editAdvisoryForm" method="post" action="/admin/advisories/update">
                     <div class="modal-body">
                         <input type="hidden" id="editAdvisoryId" name="id">
                         <div class="mb-3">
@@ -283,7 +283,7 @@ $conn->close();
                         <h2 style="font-size: 2rem;"><?php echo $total_users; ?></h2>
                         <p class="mb-0">Total Users</p>
                         <div class="mt-3">
-                            <a href="manage_users.php" class="btn btn-outline-danger btn-sm">Manage Users</a>
+                            <a href="/admin/users" class="btn btn-outline-danger btn-sm">Manage Users</a>
                         </div>
                     </div>
                 </div>
@@ -296,7 +296,7 @@ $conn->close();
                         <h2 style="font-size: 2rem;"><?php echo $total_computers; ?></h2>
                         <p class="mb-0">Total Computers</p>
                         <div class="mt-3">
-                            <a href="manage_computers.php" class="btn btn-outline-danger btn-sm">Manage Computers</a>
+                            <a href="/admin/computers" class="btn btn-outline-danger btn-sm">Manage Computers</a>
                         </div>
                     </div>
                 </div>
@@ -309,7 +309,7 @@ $conn->close();
                         <h2 style="font-size: 2rem;"><?php echo $total_reservations; ?></h2>
                         <p class="mb-0">Total Reservations</p>
                         <div class="mt-3">
-                            <a href="manage_reservations.php" class="btn btn-outline-danger btn-sm">View Reservations</a>
+                            <a href="/admin/reservations" class="btn btn-outline-danger btn-sm">View Reservations</a>
                         </div>
                     </div>
                 </div>
@@ -322,7 +322,7 @@ $conn->close();
                         <h2 style="font-size: 2rem;"><?php echo $reserved_computers; ?>/<?php echo $total_computers; ?></h2>
                         <p class="mb-0">Reserved Computers</p>
                         <div class="mt-3">
-                            <a href="manage_computers.php" class="btn btn-outline-danger btn-sm">Check Status</a>
+                            <a href="/admin/computers" class="btn btn-outline-danger btn-sm">Check Status</a>
                         </div>
                     </div>
                 </div>
@@ -336,22 +336,22 @@ $conn->close();
                         
                         <div class="row mt-4">
                             <div class="col-md-3 mb-3">
-                                <a href="manage_computers.php" class="btn btn-danger w-100">
+                                <a href="/admin/computers" class="btn btn-danger w-100">
                                     <i class="fas fa-desktop me-2"></i>Manage Computers
                                 </a>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <a href="manage_reservations.php" class="btn btn-danger w-100">
+                                <a href="/admin/reservations" class="btn btn-danger w-100">
                                     <i class="fas fa-calendar-alt me-2"></i>Manage Reservations
                                 </a>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <a href="add_tournament.php" class="btn btn-danger w-100">
+                                <a href="/admin/tournaments/add" class="btn btn-danger w-100">
                                     <i class="fas fa-trophy me-2"></i>Add Tournament
                                 </a>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <a href="manage_users.php" class="btn btn-danger w-100">
+                                <a href="/admin/users" class="btn btn-danger w-100">
                                     <i class="fas fa-user-cog me-2"></i>Manage Users
                                 </a>
                             </div>
@@ -429,7 +429,7 @@ $conn->close();
                     <h5 class="modal-title" id="printReportModalLabel">Print Reports</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="printReportForm" method="post" action="generate_report.php" target="_blank">
+                <form id="printReportForm" method="post" action="/admin/reports" target="_blank">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="reportType" class="form-label">Report Type</label>
@@ -607,7 +607,7 @@ $conn->close();
             // Load current advisory for the new advisory form
             function loadAdvisoryStatus() {
                 $.ajax({
-                    url: 'get_advisory_status.php',
+                    url: '/admin/advisories/status',
                     type: 'GET',
                     dataType: 'json',
                     success: function(response) {
@@ -626,7 +626,7 @@ $conn->close();
             // Load all advisories for the management tab
             function loadAllAdvisories() {
                 $.ajax({
-                    url: 'get_all_advisories.php',
+                    url: '/admin/advisories/list',
                     type: 'GET',
                     dataType: 'json',
                     success: function(response) {
@@ -705,7 +705,7 @@ $conn->close();
             // Toggle advisory status function
             function toggleAdvisoryStatus(id, newStatus) {
                 $.ajax({
-                    url: 'update_advisory_status.php',
+                    url: '/admin/advisories/update-status',
                     type: 'POST',
                     dataType: 'json',
                     data: {
@@ -732,7 +732,7 @@ $conn->close();
             // Delete advisory function
             function deleteAdvisory(id) {
                 $.ajax({
-                    url: 'delete_advisory.php',
+                    url: '/admin/advisories/delete',
                     type: 'POST',
                     dataType: 'json',
                     data: {
@@ -762,7 +762,7 @@ $conn->close();
                 const formData = $(this).serialize();
                 
                 $.ajax({
-                    url: 'update_advisory.php',
+                    url: '/admin/advisories/update',
                     type: 'POST',
                     dataType: 'json',
                     data: formData,
@@ -790,3 +790,8 @@ $conn->close();
 </body>
 
 </html>
+
+
+
+
+

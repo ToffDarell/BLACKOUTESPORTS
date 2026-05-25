@@ -432,10 +432,11 @@ if (isset($_POST['approve_membership']) || isset($_POST['reject_membership'])) {
             ($email_sent ? " A notification email has been sent to the user." : " Email could not be sent, but a notification has been stored.");
     }
 
-    // Redirect back to manage_users.php for admin actions
-    header("Location: manage_users.php");
+    // Redirect back to /admin/users for admin actions
+    header("Location: /admin/users");
     exit();
 }
 
 $conn->close();
 ?>
+
